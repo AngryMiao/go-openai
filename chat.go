@@ -6,7 +6,7 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/sashabaranov/go-openai/jsonschema"
+	"github.com/angrymiao/go-openai/jsonschema"
 )
 
 // Chat message role defined by the OpenAI API.
@@ -332,6 +332,8 @@ type ChatCompletionRequest struct {
 	// https://platform.openai.com/docs/api-reference/chat/create#chat_create-safety_identifier
 	SafetyIdentifier string `json:"safety_identifier,omitempty"`
 	// Embedded struct for non-OpenAI extensions
+	EnableSearch bool `json:"enable_search,omitempty"`
+	// Expand search fields
 	ChatCompletionRequestExtensions
 }
 
